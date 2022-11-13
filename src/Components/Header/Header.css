@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  background-color: transparent;
+
+}
+
+.logo {
+  padding: 0 30px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: rgb(202, 199, 199);
+  font-size: 16px;
+  font-weight: 500;
+  padding: 16px;
+  transition: all 0.5s;
+}
+
+.menu a:hover {
+  color: rgb(255, 191, 0);
+}

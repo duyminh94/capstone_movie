@@ -1,0 +1,93 @@
+.banner {
+  margin-top: 64px;
+  position: relative;
+}
+.banner img {
+  width: 100%;
+  height: 92vh;
+  object-fit: inherit;
+}
+
+.banner .banner_icon_play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 100px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.banner .banner_icon_play:hover {
+  color: red;
+}
+
+.banner:hover .banner_icon_play {
+  opacity: 1;
+}
+
+.banner .main .banner_overlay {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+}
+
+.banner .main .banner_modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+}
+
+.banner .main .banner_modal .modal_close {
+  position: absolute;
+  top: 0;
+  left: 101%;
+}
+
+.banner .main .banner_modal .banner_close .button_trailer {
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.5);
+  color: #fff;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner .swiper-button-next,.swiper-button-prev {
+    width: 70px;
+		height: 70px;
+		background: gray;
+		color: #fff;
+		font-weight: 700;
+		border-radius: 50%;
+		opacity: 0.8;
+}
+
+.banner .swiper-button-next,.swiper-button-prev:hover {
+    opacity: 1;
+}
+
+.banner .swiper-pagination-bullet {
+    width: 15px;
+		height: 15px;
+		background: rgba(255, 255, 255, 0.5);
+		opacity: 0.8;
+}
+
+.banner .swiper-pagination-bullet-active {
+    background: red;
+}
