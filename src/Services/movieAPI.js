@@ -5,13 +5,21 @@ const movieAPI = {
   //   return fetcher.get("QuanLyPhim/LayDanhSachBanner");
   // },
   getMovies: () => {
-    return fetcher.get("QuanLyPhim/LayDanhSachPhim?maNhom=GP04", {
+    return fetcher.get("QuanLyPhim/LayDanhSachPhim", {
       params: {
-        maNhom: "GP04",
+        maNhom: "GP03",
         /* GP 01 - 015 */
       },
     });
   },
+
+  getMovieDetails: (movieId) => {
+    return fetcher.get("QuanLyPhim/LayThongTinPhim", {
+      params: {
+        maPhim: movieId,
+      }
+    })
+  }
 };
 
 export default movieAPI;

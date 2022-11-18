@@ -1,14 +1,21 @@
-import fetcher from "./fetcher"
-
+import fetcher from "./fetcher";
 
 const tickerAPI = {
-    getMovieRap: () => {
-        return fetcher.get("QuanLyRap/LayThongTinLichChieuHeThongRap?maNhom=GP03",{
-            params: {
-                maNhom: "GP03"
-            }
-        })
-    }
-}
+  getMovieRap: () => {
+    return fetcher.get("QuanLyRap/LayThongTinLichChieuHeThongRap", {
+      params: {
+        maNhom: "GP03",
+      },
+    });
+  },
 
-export default tickerAPI
+  getMovieRapDetail: (movieId) => {
+    return fetcher.get("QuanLyRap/LayThongTinLichChieuPhim", {
+      params: {
+        maPhim: movieId,
+      },
+    });
+  },
+};
+
+export default tickerAPI;

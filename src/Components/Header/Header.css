@@ -4,14 +4,13 @@
   align-items: center;
   height: 100%;
   background-color: transparent;
-
 }
 
-.logo {
-  padding: 0 30px;
+.header .logo {
+  margin-bottom: 0;
 }
 
-.menu a {
+.header .menu a {
   text-decoration: none;
   color: rgb(202, 199, 199);
   font-size: 16px;
@@ -20,6 +19,202 @@
   transition: all 0.5s;
 }
 
-.menu a:hover {
-  color: rgb(255, 191, 0);
+.header .menu a:hover {
+  color: rgb(221, 11, 11);
+}
+
+.header .logout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header .logout .name {
+  margin-right: 30px;
+  margin: 0 10px;
+  font-size: 18px;
+  font-weight: 500;
+  color: rgb(230, 234, 237);
+}
+
+.header .auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header .auth .btn {
+  margin-left: 5px;
+}
+
+.header .auth .btn .ant-avatar.ant-avatar-icon {
+  line-height: 20px;
+}
+
+.header .auth .btn a {
+  text-decoration: none;
+  padding: 15px 10px;
+  line-height: 0;
+  font-weight: 500;
+  color: rgb(227, 209, 209);
+  opacity: 1;
+  transition: all 0.5s;
+}
+
+.header .auth .btn a:hover {
+  opacity: 0.8;
+  color: rgb(180, 17, 17);
+}
+
+.overlay-mobile {
+  display: none;
+  position: fixed;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.menu-icon {
+  display: none;
+  color: red;
+}
+
+.header-mobile {
+  background: #eee;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  padding: 20px;
+  transition: all 0.5s;
+}
+
+.header-mobile .logo-mobile h1 {
+  font-size: 35px;
+  font-style: italic;
+  font-weight: 700;
+  color: red;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.header-mobile .menu-icon {
+  position: absolute;
+  top: 5px;
+  left: -80px;
+}
+
+.header-mobile .logout-mobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  margin: 20px 0 50px;
+  padding-bottom: 20px;
+  border-bottom: 1px dotted #000;
+}
+
+.header-mobile .logout-mobile .name-mobile {
+  margin: 0 10px;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.header-mobile .auth-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px dotted #000;
+}
+.header-mobile .auth-mobile .btn-mobile {
+  height: 50px;
+}
+
+.header-mobile .auth-mobile .btn-mobile a {
+  text-decoration: none;
+  padding-left: 10px;
+  line-height: 0;
+  font-weight: 500;
+  color: #000;
+  opacity: 1;
+  transition: all 0.5s;
+}
+
+.header-mobile .auth-mobile .btn-mobile a:hover {
+  opacity: 0.8;
+  color: rgb(218, 11, 11);
+}
+
+.header-mobile .logo-mobile {
+  display: none;
+}
+
+.header-mobile .menu-mobile a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.5s;
+}
+
+.header-mobile .menu-mobile a:hover {
+  color: rgb(205, 15, 15);
+}
+
+.ant-dropdown {
+  z-index: 9999;
+}
+
+@media screen and (max-width: 992px) {
+  .header .menu-icon {
+    display: block !important;
+  }
+
+  .header .menu,
+  .logout,
+  .auth {
+    display: none !important;
+  }
+
+  .header-mobile .logo-mobile {
+    width: 80%;
+    display: inline;
+  }
+
+}
+
+@media screen and (max-width: 992px){
+  .header-mobile .logo-mobile {
+    display: inline;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header .logo {
+    font-size: 25px;
+  }
+
+  .header-mobile .logo-mobile {
+    width: 70%;
+  }
+
+}
+
+@media screen and (max-width: 576px) {
+  .header-mobile {
+    width: 200px;
+  }
+
+  .header-mobile .logo-mobile  {
+    width: 60%;
+  }
 }

@@ -1,0 +1,91 @@
+.auth_layout {
+  position: relative;
+}
+
+.auth_layout .auth_overlay {
+  width: 100%;
+  height: 100vh;
+  background: url("https://static.clingme.vn/images/default/cms-images/media/0/0/6/1543543455_224332.jpg?imageWidth=562")
+    center / cover no-repeat;
+  filter: brightness(90%);
+}
+
+.auth_layout .auth_form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 20px;
+  display: flex;
+}
+
+/* .auth .auth_form  {
+  width: 500px;
+  height: 450px;
+  background: url("https://cdn.galaxycine.vn/media/2022/11/10/300x450_1668066486371.jpg")
+    center / cover no-repeat;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+} */
+
+.auth_layout .auth_form .back_home {
+  position: absolute;
+  top: 0;
+  left: -70px;
+  font-size: 30px;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.2);
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.auth_layout .auth_form .back_home .close {
+  color: rgb(249, 6, 6);
+}
+
+.auth_layout .auth_form .back_home .close:hover {
+  transform: translateY(-10px);
+}
+
+.auth_layout .auth_form .auth_user {
+  width: 400px;
+  padding: 10px 20px;
+  background: url("https://cdn.pixabay.com/photo/2012/08/27/22/59/movie-projector-55122__340.png")
+    center / cover no-repeat;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+  .auth_layout .auth_form {
+    width: 500px;
+    left: 58%;
+  }
+}
+
+@media screen and (max-width: 998px) {
+  .auth_layout .auth_form {
+    width: 400px;
+    
+  }
+
+  .auth_layout .auth_form .auth_user {
+    border-radius: 20px;
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .auth_layout .auth_form {
+    width: 300px;
+    left: 50%;
+  }
+   .auth_layout .auth_form .auth_user {
+    width: 320px;
+  }
+}

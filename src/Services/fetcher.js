@@ -15,4 +15,17 @@ fetcher.interceptors.response.use(
         return Promise.reject(error.response.data.content)
     }
 )
+
+fetcher.interceptors.request.use(
+    (config) => {
+        const { accessToken } = JSON.parse(localStorage.getItem("user")) || {};
+        if(accessToken){
+            config.headers.Authorization = `Bearer ${accessToken}`
+        }
+        return config
+    },
+    (error) => {
+        return Promise.reject(error)
+    }
+)
 export default fetcher

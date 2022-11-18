@@ -3,6 +3,10 @@
   margin: 100px auto;
 }
 
+.cinemax .cinema-system-mobile {
+  display: none;
+}
+
 .cinemax .cinemax_box {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
@@ -139,7 +143,6 @@
   pointer-events: none;
 }
 
-
 .cinema-scroll {
   overflow-y: auto;
   height: 100%;
@@ -163,4 +166,144 @@
 
 .ant-tabs-nav {
   max-width: 50%;
+}
+.ant-collapse {
+background-color: rgb(18, 17, 17) ;	
+}
+
+.ant-collapse-content {
+  background-color: #000;
+}
+
+@media screen and (max-width: 992px) {
+  .cinemax {
+    max-width: 800px;
+  }
+
+  .cinemax .cine-info {
+    max-height: 300px !important;
+  }
+
+  .cinemax .cine-info .cine-name {
+    margin-top: 10px;
+    font-size: 15px;
+  }
+
+  .cinemax .cine-date {
+    font-size: 12px !important;
+  }
+
+  .cinemax .ant-tabs-tab {
+    padding: 5px 10px !important;
+    max-height: 100px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cinemax {
+    max-width: 550px;
+  }
+
+  .cinemax .cine-info {
+    max-height: 340px !important;
+  }
+
+  .cinemax .cinemax_box .cine-info .cine-name {
+    font-size: 14px;
+    margin-top: auto;
+  }
+
+  .cinemax .cinemax_box .cine-flim .cine-img {
+    height: 80px;
+    width: 50%;
+  }
+
+  .cinemax .cine-srcoll::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #dbd8d8 !important;
+  }
+
+  .cinemax .cine-srcoll::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: block !important;
+  }
+
+  .cinemax .cine-srcoll .cine-flim {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px dotted #000;
+  }
+
+  .cinemax .cine-srcoll .cine-flim .cine-title {
+    text-align: center;
+    font-size: 15px;
+    margin-top: 10px;
+  }
+
+  .cinemax .tab-info .ant-tabs-nav {
+    width: 200px;
+  }
+  .cinemax .tab-info .ant-tabs-nav .cine-info {
+    width: 100%;
+  }
+
+  .cinemax .tab-info .ant-tabs-nav .cine-info .cine-address {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .cinemax {
+    margin: 0 10px 50px;
+  }
+  .cinemax .cinemax_box {
+    display: none;
+  }
+
+  .cinemax .cinema-system-mobile {
+    display: block;
+    height: auto;
+    background: #000;
+  }
+
+  .cinemax
+    .cinema-system-mobile
+    .ant-collapse
+    > .ant-collapse-item
+    > .ant-collapse-header {
+    line-height: 2;
+  }
+  .cinemax .cinema-system-mobile .cinema-info-mobile .cinema-name-mobile {
+    font-size: 16px;
+    color: rgb(54, 9, 232);
+    margin-bottom: 5px;
+  }
+
+  .cinemax .cinema-system-mobile .cinema-info-mobile .cinema-address-mobile {
+    margin-bottom: 5px;
+    color: rgb(228, 228, 7);
+  }
+  .cinemax .cinema-system-mobile .cinema-info-mobile .cinema-detail-mobile {
+    color: red;
+  }
+
+  .cinemax .cinema-system-mobile .name-film-mobile {
+    margin-bottom: 5px;
+    color: red;
+    font-weight: 500;
+  }
+  .cinemax .cinema-system-mobile .cinema-date-mobile {
+    margin-bottom: 8px;
+    margin-right: 8px;
+    padding: 5px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: orange;
+    color: #eee;
+    font-size: 14px;
+    font-weight: 500;
+  }
 }
