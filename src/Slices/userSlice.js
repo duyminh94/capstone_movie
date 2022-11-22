@@ -9,7 +9,7 @@ const initialState = {
 };
 
 export const getUsers = createAsyncThunk(
-    "admin/getUsers",
+    "home/admin/getUsers",
     async (_, { rejectWithValue }) => {
 		try {
 			const data = await authAPI.getUsers();
@@ -19,6 +19,18 @@ export const getUsers = createAsyncThunk(
 		}
 	}
 )
+
+export const updateUserClient = createAsyncThunk(
+	"home/admin/updateUserClient",
+	async (values, { dispatch, rejectWithValue }) => {
+		try {
+			await authAPI.updateUserClient(values);
+			dispatch(getUsers());
+		} catch (error) {
+			return rejectWithValue(error);
+		}
+	}
+);
 
 
 const userSlice = createSlice({

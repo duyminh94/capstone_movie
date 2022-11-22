@@ -7,13 +7,13 @@ const initialState = {
   error: null,
 };
 
-export const login = createAsyncThunk("auth/login", async (values ,{ rejectWithValue ,fulfillWithValue }) => {
+export const login = createAsyncThunk("auth/login", async (values ) => {
   try {
     const data = await authAPI.login(values);
     localStorage.setItem("user", JSON.stringify(data));
-    return fulfillWithValue(data);
+    return data;
   } catch (error) {
-    return rejectWithValue(error);
+    throw error;
   }
 });
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { UserOutlined } from "@ant-design/icons";
 import { DownOutlined } from "@ant-design/icons";
-import { Avatar, Dropdown, Menu, Space } from "antd";
+import { Avatar, Button, Dropdown,  Space } from "antd";
 import { Link, useNavigate } from 'react-router-dom'
 import { logout } from '../../Slices/authSlice'
 import { Twirl as Hamburger } from 'hamburger-react';
@@ -21,9 +21,9 @@ const Header = () => {
         navigate("/")
     }
 
-    const listMenu = 
-        user?.maLoaiNguoiDung === "QuanTri"
-            ? [
+    const items =
+        user?.maLoaiNguoiDung === "QuanTri" ?
+            [
                 {
                     label: (
                         <>
@@ -76,8 +76,8 @@ const Header = () => {
                     ),
                     key: "3",
                 },
-            ]
-            : [
+            ] :
+            [
                 {
                     label: (
                         <>
@@ -116,111 +116,6 @@ const Header = () => {
                 },
             ]
 
-    const menus = <Menu items={listMenu} />;
-
-    // const menus = (
-    //     <Menu items={
-    //         user?.maLoaiNguoiDung === "QuanTri"
-    //             ? [
-    //                 {
-    //                     label: (
-    //                         <>
-    //                             <span style={{ lineHeight: "25px", marginRight: "10px" }}>
-    //                                 <AiOutlineUser />
-    //                             </span>
-    //                             <a style={{ fontWeight: "500" }} href="#">
-    //                                 Thông tin cá nhân
-    //                             </a>
-    //                         </>
-    //                     ),
-    //                     key: "0",
-    //                 },
-    //                 {
-    //                     label: (
-    //                         <>
-    //                             <span
-    //                                 style={{
-    //                                     lineHeight: "25px",
-    //                                     marginRight: "10px",
-    //                                     color: "#fff",
-    //                                 }}
-    //                             >
-    //                                 <AiOutlineSetting />
-    //                             </span>
-    //                             <Link style={{ fontWeight: "500", color: "#fff" }} to="/admin">
-    //                                 Quản trị
-    //                             </Link>
-    //                         </>
-    //                     ),
-    //                     key: "1",
-    //                 },
-    //                 {
-    //                     type: "divider",
-    //                 },
-    //                 {
-    //                     label: (
-    //                         <>
-    //                             <span
-    //                                 style={{
-    //                                     lineHeight: "25px",
-    //                                     marginRight: "10px",
-    //                                     color: "#fff",
-    //                                 }}
-    //                             >
-    //                                 <FiLogOut />
-    //                             </span>
-    //                             <a
-    //                                 style={{ fontWeight: "500", color: "#fff" }}
-    //                                 href="#"
-    //                                 onClick={handleLogout}
-    //                             >
-    //                                 Đăng xuất
-    //                             </a>
-    //                         </>
-    //                     ),
-    //                     key: "3",
-    //                 },
-    //             ]
-    //             : [
-    //                 {
-    //                     label: (
-    //                         <>
-    //                             <span style={{ lineHeight: "25px", marginRight: "10px" }}>
-    //                                 <AiOutlineUser />
-    //                             </span>
-    //                             <a style={{ fontWeight: "500" }} href="#">
-    //                                 Thông tin cá nhân
-    //                             </a>
-    //                         </>
-    //                     ),
-    //                     key: "0",
-    //                 },
-    //                 {
-    //                     type: "divider",
-    //                 },
-    //                 {
-    //                     label: (
-    //                         <>
-    //                             <span style={{ lineHeight: "25px", marginRight: "10px" }}>
-    //                                 <FiLogOut />
-    //                             </span>
-    //                             <a
-    //                                 style={{ fontWeight: "500" }}
-    //                                 href="#"
-    //                                 onClick={handleLogout}
-    //                             >
-    //                                 Đăng xuất
-    //                             </a>
-    //                         </>
-    //                     ),
-    //                     key: "3",
-    //                 },
-    //             ]
-    //     }
-    //     />
-    // )
-
-
     return (
         <>
             <div className="header">
@@ -242,12 +137,12 @@ const Header = () => {
                             {user.taiKhoan.slice(0, 1).toUpperCase()}
                         </Avatar>
                         <p className="name">{user.taiKhoan}</p>
-                        <Dropdown menu={menus} trigger={["click"]}>
-                            <a onClick={(e) => e.preventDefault()}>
+                        <Dropdown menu={{ items }} trigger={["click"]}>
+                            <Button onClick={(e) => e.preventDefault()}>
                                 <Space>
                                     <DownOutlined style={{ color: "#999", fontSize: "18px" }} />
                                 </Space>
-                            </a>
+                            </Button>
                         </Dropdown>
                     </div>
                 ) : (
@@ -295,12 +190,12 @@ const Header = () => {
                                 {user.taiKhoan.slice(0, 1).toUpperCase()}
                             </Avatar>
                             <p className="name-mobile">{user.taiKhoan}</p>
-                            <Dropdown menu={menus} trigger={["click"]}>
-                                <a onClick={(e) => e.preventDefault()}>
+                            <Dropdown menu={{ items }} trigger={["click"]}>
+                                <Button  onClick={(e) => e.preventDefault()}>
                                     <Space>
                                         <DownOutlined style={{ color: "#999", fontSize: "18px" }} />
                                     </Space>
-                                </a>
+                                </Button >
                             </Dropdown>
                         </div>
                     </div>

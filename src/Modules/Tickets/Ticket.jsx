@@ -4,6 +4,7 @@ import useRequest from '../../Hook/useRequest';
 import ticketboxAPI from '../../Services/ticketboxAPI';
 import BookTicket from './BookTicket';
 import BookSeat from "./BootSeat"
+import "./Ticket.css"
 
 const Ticket = () => {
     const [checkLists, setCheckLists] = useState([])
@@ -37,7 +38,7 @@ const Ticket = () => {
                 </div>
 
                 <div className='ticket-booking'>
-                    <BookTicket ticketId={ticketId} tickets={tickets} handleCheck={handleCheck}/>
+                    <BookTicket ticketId={ticketId} tickets={tickets} checkLists={checkLists}/>
                 </div>
             </div>
         </div>

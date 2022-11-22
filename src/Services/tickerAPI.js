@@ -4,7 +4,7 @@ const tickerAPI = {
   getMovieRap: () => {
     return fetcher.get("QuanLyRap/LayThongTinLichChieuHeThongRap", {
       params: {
-        maNhom: "GP03",
+        maNhom: "GP06",
       },
     });
   },

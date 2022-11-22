@@ -7,7 +7,7 @@ const movieAPI = {
   getMovies: () => {
     return fetcher.get("QuanLyPhim/LayDanhSachPhim", {
       params: {
-        maNhom: "GP03",
+        maNhom: "GP06",
         /* GP 01 - 015 */
       },
     });

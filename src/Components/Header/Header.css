@@ -43,6 +43,11 @@
   align-items: center;
 }
 
+.header .ant-dropdown-trigger  {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid;
+}
+
 .header .auth .btn {
   margin-left: 5px;
 }

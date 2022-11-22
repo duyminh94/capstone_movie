@@ -1,14 +1,15 @@
 import React from 'react'
-import { Form, Input,  notification } from "antd"
+import { Form, Input, notification } from "antd"
 import { Controller, useForm } from "react-hook-form"
 import { useDispatch, useSelector } from "react-redux";
-import { Link, Navigate, useNavigate } from "react-router-dom"
+import { Link, Navigate, useSearchParams } from "react-router-dom"
 import swal from "sweetalert";
 import { login } from "../../../Slices/authSlice"
 import "./Login.css"
 const Login = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
+  const [searchParams] = useSearchParams()
   const { user, isloading } = useSelector((state) => state.auth);
   const { control, handleSubmit } = useForm({
     defaultValues: { taiKhoan: "", matKhau: "" },
@@ -19,20 +20,18 @@ const Login = () => {
     try {
       await dispatch(login(values)).unwrap();
       await swal("Đăng Nhập Thành Công!", "You clicked the 'OK'!", "success");
-      navigate("/");
     } catch (error) {
       notification.open({
         message: "Đăng nhập thất bại",
         description: error,
       });
-      
     }
-    setTimeout(() => {
-      if (user) {
-        return <Navigate to="/" />;
-      }
-    }, 3000);
   }
+  if (user) {
+    const redirectUrl = searchParams.get("redirectUrl")
+    return <Navigate to={redirectUrl || "/"} replace />;
+  }
+
   return (
     <div className='login'>
       <h1 className='login_title'>

@@ -6,6 +6,9 @@ import MainLayout from "../Components/MainLayout";
 import Home from "../Modules/Home/Home";
 import Movie from "../Modules/Movie/";
 import Ticket from "../Modules/Tickets/Ticket";
+import CheckRouter from "./CheckRouter";
+import Users from "../Modules/Users/Users";
+
 
 const router = createBrowserRouter([
   {
@@ -14,7 +17,12 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: "/movie/:movieId", element: <Movie /> },
-      { path: "ticket/:ticketId", element: <Ticket /> },
+      {path: "/user" ,element: <Users/>},
+      { path: "ticket/:ticketId", element: (
+        <CheckRouter>
+          <Ticket/>
+        </CheckRouter>
+      ) },
     ],
   },
 
